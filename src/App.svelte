@@ -15,8 +15,6 @@
 		<Link to="/">Home</Link>
 		<Link to="/about">About</Link>
 		<Link to="/products">Products</Link>
-		<Link to="/products/5">Prod 5</Link>
-		<Link to="/products/7">Prod 7</Link>
 	</nav>
 	<Route path="/" component={Home}/>
 	<Route path="/about" component={About}/>
