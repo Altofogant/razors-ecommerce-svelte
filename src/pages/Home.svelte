@@ -1,6 +1,6 @@
 <script>
     import Hero from '../components/Hero.svelte';
-    import {Link} from 'svelte-routing';
+    import {link} from 'svelte-routing';
 </script>
 
 <Hero>

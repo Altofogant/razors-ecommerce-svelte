@@ -11,14 +11,14 @@
 </script>
 
 <Router>
-	<nav>
+	<nav class="navbar">
 		<Link to="/">Home</Link>
 		<Link to="/about">About</Link>
 		<Link to="/products">Products</Link>
 	</nav>
-	<Route path="/" component={Home}/>
-	<Route path="/about" component={About}/>
-	<Route path="/login" component={Login}/>
-	<Route path="/products" component={Products}/>
-	<Route path="/products/:id" component={ProductTemplate}/>
+	<Route path="/" component={Home} />
+	<Route path="/about" component={About} />
+	<Route path="/login" component={Login} />
+	<Route path="/products" component={Products} />
+	<Route path="/products/:id" component={ProductTemplate} />
 </Router>
