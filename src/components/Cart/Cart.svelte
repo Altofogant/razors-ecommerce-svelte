@@ -2,7 +2,7 @@
     import globalStore from '../../stores/globalStore';
     import { fly, fade } from 'svelte/transition';
     import { link } from 'svelte-routing';
-    // itemList
+    import ItemList from './ItemList.svelte';
     let user = false;
 </script>
 
@@ -18,7 +18,7 @@
                 <h2 class="cart-title">your bag</h2>
                 <span></span>
             </div>
-            <p>cart items</p>
+            <ItemList />
             <div class="cart-footer">
                 {#if user}
                     <a href="/checkout" use:link class="btn btn-primary btn-block" on:click={() => {
