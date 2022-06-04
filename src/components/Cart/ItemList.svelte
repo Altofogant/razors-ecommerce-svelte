@@ -1,6 +1,6 @@
 <script>
     import Item from './Item.svelte';
-    import cart from '../../stores/cart';
+    import cart, {cartTotal} from '../../stores/cart';
     import { fly } from 'svelte/transition';
     import { flip } from 'svelte/animate';
 </script>
@@ -16,4 +16,5 @@
             <h2 class="ecmpty-cart">is currently empty...</h2>
         {/each}
     </article>
+    <h3 class="cart-total">total: ${$cartTotal}</h3>
 </section>
