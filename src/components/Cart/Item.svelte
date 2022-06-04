@@ -5,6 +5,7 @@
     export let title;
     export let amount;
     // import functionality
+    import {removeItem} from '../../stores/cart.js';
 </script>
 
 <div class="cart-item">
@@ -13,7 +14,7 @@
         <h4>{title}</h4>
         <h5>{price}</h5>
         <button class="cart-btn remove-btn" on:click={() => {
-            console.log('remove item');
+            removeItem(id);
         }}>remove</button>
     </div>
     <div>
