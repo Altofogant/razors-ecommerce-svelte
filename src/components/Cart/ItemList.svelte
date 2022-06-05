@@ -16,5 +16,5 @@
             <h2 class="ecmpty-cart">is currently empty...</h2>
         {/each}
     </article>
-    <h3 class="cart-total">total: ${$cartTotal}</h3>
+    <h3 class="cart-total">total: ${$cartTotal.toFixed(2)}</h3>
 </section>
