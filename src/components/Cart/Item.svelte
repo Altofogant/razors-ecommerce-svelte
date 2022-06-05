@@ -5,7 +5,7 @@
     export let title;
     export let amount;
     // import functionality
-    import {removeItem, increaseAmount} from '../../stores/cart.js';
+    import {removeItem, increaseAmount, decreaseAmount} from '../../stores/cart.js';
 </script>
 
 <div class="cart-item">
@@ -25,7 +25,7 @@
         </button>
         <p class="item-amount">{amount}</p>
         <button class="cart-btn amount-btn" on:click={() => {
-            console.log('decrease item');
+            decreaseAmount(id);
         }}>
             <i class="fas fa-chevron-down"></i>
         </button>

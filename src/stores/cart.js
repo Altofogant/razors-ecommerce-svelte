@@ -36,8 +36,21 @@ export const removeItem = id => {
 
 export const increaseAmount = id => {
     store.update(storeValue => {
-        return toggleAmount(id,storeValue, "inc" );
+        return toggleAmount(id,storeValue, "inc");
     })
+};
+
+export const decreaseAmount = id => {
+    store.update(storeValue => {
+        let item = storeValue.find(item => item.id === id);
+        let store;
+        if (item.amount === 1) {
+            store = remove(id, storeValue);
+        } else {
+            store = toggleAmount(id, storeValue, "dec");
+        };
+        return [...store];
+    });
 };
 // local storage
 
