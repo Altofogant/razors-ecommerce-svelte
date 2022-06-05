@@ -52,6 +52,21 @@ export const decreaseAmount = id => {
         return [...store];
     });
 };
+
+export const addToCart = product => {
+    store.update(storeValue => {
+        const {id, image, title, price} = product;
+        let item = storeValue.find(item => item.id === id);
+        let store;
+        if (item) {
+            store = toggleAmount(id, storeValue, "inc");
+        } else {
+            let newItem = {id, image, title, price, amount: 1};
+            store = [...storeValue, newItem];
+        };
+        return store;
+    });
+};
 // local storage
 
 export default store;
