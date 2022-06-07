@@ -1,6 +1,6 @@
 <script>
     export let id;
-    export let location;
+    //export let location;
 
     import products from '../stores/defaultProducts';
     import Loading from '../components/Loading.svelte';
