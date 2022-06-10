@@ -1,9 +1,8 @@
 import url from './URL';
 
 export default async () => {
-    const response = await fetch(`${url}/products`).catch(error => console.error(error));
+    const response = await fetch(`${url}/products?populate=*`).catch(error => console.error(error));
     const products = await response.json();
-    console.log(products);
 
     if(products.error) {
         return null;

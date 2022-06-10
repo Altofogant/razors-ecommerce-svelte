@@ -9,10 +9,10 @@ const store = writable([], () => {
 
 async function setProducts() {
     let products = await getProducts();
-    console.log(products.data)
     if(products.data) {
-        //products = flattenProducts(products.data);
-        store.set(products.data);
+        products = flattenProducts(products.data);
+        console.log(products)
+        store.set(products);
     }
 }
 
@@ -23,8 +23,9 @@ async function setProducts() {
 //flatten products
 function flattenProducts(data) {
     return data.map(item => {
-        let image = item.image.url;
-        return {...item, image};
+        let image = item.attributes.image.data.attributes.url;
+        item.attributes.image = image;
+        return {...item};
     });
 }
 

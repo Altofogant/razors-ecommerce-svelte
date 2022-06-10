@@ -14,8 +14,6 @@
 	import Cart from './components/Cart/Cart.svelte';
 	//global store
 	import globalStore from './stores/globalStore.js';
-	console.log(globalStore);
-	console.log($globalStore);
 </script>
 
 <Router>
