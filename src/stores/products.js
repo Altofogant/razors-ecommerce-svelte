@@ -1,5 +1,5 @@
 import {writable, derived} from 'svelte/store';
-import localProducts from '../localProducts';
+import url from '../strapi/URL';
 import getProducts from '../strapi/getProducts';
 
 const store = writable([], () => {
@@ -23,7 +23,8 @@ async function setProducts() {
 //flatten products
 function flattenProducts(data) {
     return data.map(item => {
-        let image = item.attributes.image.data.attributes.url;
+        //let image = item.attributes.image.data.attributes.url;
+        let image = `${url}${item.attributes.image.data.attributes.url}`;
         item.attributes.image = image;
         return {...item};
     });
