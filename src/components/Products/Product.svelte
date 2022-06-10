@@ -1,6 +1,6 @@
 <script>
     export let product;
-    const {title, image, price, id} = product;
+    const {title, image, price, id} = product.attributes;
     import {link} from 'svelte-routing';
 </script>
 
