@@ -22,12 +22,12 @@
     <a href="/products" use:link class="btn btn-primary">back to products</a>
     <div class="single-product-container">
         <article class="single-product-image">
-            <img src={product.image} alt={product.title}>
+            <img src={product.attributes.image} alt={product.title}>
         </article>
         <article>
-            <h1>{product.title}</h1>
-            <h2>${product.price}</h2>
-            <p>{product.description}</p>
+            <h1>{product.attributes.title}</h1>
+            <h2>${product.attributes.price}</h2>
+            <p>{product.attributes.description}</p>
             <button class="btn btn-primary btn-block" on:click={() => {
                 addToCart(product);
                 globalStore.toggleItem('cart', true);
