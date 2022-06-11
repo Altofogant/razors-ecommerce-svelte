@@ -1,4 +1,7 @@
 <script>
+    import loginUser from '../strapi/loginUser';
+    import registerUser from '../strapi/registerUser';
+
     let email = '';
     let password = '';
     let username = 'default username';
@@ -6,11 +9,24 @@
     $: isEmpty = !email || !password || !username;
 
     function toggleMember() {
-        
+        isMember = !isMember;
+        console.log(isMember);
+        if (!isMember) {
+            username = '';
+        } else {
+            username = 'default username';
+        }
+        console.log(username);
     }
 
     async function handleSubmit() {
+        let user;
 
+        if (isMember) {
+            loginUser();
+        } else {
+            registerUser();
+        }
     }
 </script>
 
@@ -27,7 +43,7 @@
             <label for="password">password</label>
             <input type="password" id="password" bind:value={password}>
         </div>
-        {#if isMember}
+        {#if !isMember}
             <div class="form-control">
                 <label for="username">username</label>
                 <input type="text" id="username" bind:value={username}>
