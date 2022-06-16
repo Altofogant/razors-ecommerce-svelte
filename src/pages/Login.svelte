@@ -9,7 +9,7 @@
     let username = 'default username';
     let isMember = true;
     //add alert
-    $: isEmpty = !email || !password || !username;
+    $: isEmpty = !email || !password || !username || $globalStore.alert;
 
     function toggleMember() {
         isMember = !isMember;
@@ -23,7 +23,7 @@
     }
 
     async function handleSubmit() {
-        //add alert
+        globalStore.toggleItem("alert", true, "Loading data... please wait");
         let user;
 
         if (isMember) {
