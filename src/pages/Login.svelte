@@ -27,7 +27,6 @@
         } else {
             user = await registerUser({email, password, username});
         }
-        console.log(user);
         if(user) {
 
         } else {
