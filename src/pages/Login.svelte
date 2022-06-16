@@ -1,11 +1,13 @@
 <script>
     import loginUser from '../strapi/loginUser';
     import registerUser from '../strapi/registerUser';
+    import {navigate} from 'svelte-routing';
 
     let email = '';
     let password = '';
     let username = 'default username';
     let isMember = true;
+    //add alert
     $: isEmpty = !email || !password || !username;
 
     function toggleMember() {
@@ -20,6 +22,7 @@
     }
 
     async function handleSubmit() {
+        //add alert
         let user;
 
         if (isMember) {
@@ -28,9 +31,9 @@
             user = await registerUser({email, password, username});
         }
         if(user) {
-
-        } else {
-
+            navigate('/products');
+            //add alert
+            return;
         }
     }
 </script>
