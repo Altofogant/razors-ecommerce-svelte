@@ -6,6 +6,18 @@
     const handleClose = () => {
         globalStore.toggleItem('alert', false);
     }
+
+    let timeout;
+
+    onMount(() => {
+        timeout = setTimeout(() => {
+            globalStore.toggleItem("alert", false);
+        }, 3000);
+    });
+
+    onDestroy(() => {
+        clearTimeout(timeout);
+    })
 </script>
 
 <div class="alert-container" class:alert-danger={$globalStore.alertDanger} in:fly={{y:-200, duration: 1000}} out:fade={{duration:0}}>
