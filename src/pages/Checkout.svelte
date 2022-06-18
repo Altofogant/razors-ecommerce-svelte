@@ -11,3 +11,11 @@
     });
 </script>
 
+{#if $cartTotal > 0}
+    <h1>form</h1>
+{:else}
+    <div class="checkout-empty">
+        <h2>your cart is empty</h2>
+        <a href="/products" class="btn btn-primary">fill it</a>
+    </div>
+{/if}
