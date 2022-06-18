@@ -17,7 +17,7 @@ const store = {
             })
         } else {
             globalStore.update(storeValues => {
-                 return {...storeValues, [item]:value};
+                return {...storeValues, [item]:value};
             })
         }
     }

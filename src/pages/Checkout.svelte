@@ -1,1 +1,13 @@
-<h1>Welcome to checkout</h1>
+<script>
+    import {onMount} from 'svelte';
+    import {navigate, link} from 'svelte-routing';
+    import user from '../stores/user';
+    import {cartTotal} from '../stores/cart';
+
+    onMount(() => {
+        if (!$user.jwt) {
+            navigate('/');
+        }
+    });
+</script>
+
